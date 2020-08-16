@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+     crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="disp">
+
+        </div>
+    </div>  
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script>
+let products=[
+		{"prod":"Pepsi","price":12,"quantity":16,"category":"Food"},
+		{"prod":"Coke","price":15,"quantity":12,"category":"Food"},
+		{"prod":"Mirinda","price":30,"quantity":15,"category":"Food"},
+		{"prod":"Red	Bull","price":80,"quantity":2,"category":"Food"},
+		{"prod":"Lux","price":10,"quantity":11,"category":"Soap"},
+		{"prod":"Dove","price":25,"quantity":4,"category":"Soap"},
+		{"prod":"Dettol","price":15,"quantity":6,"category":"Soap"},
+		{"prod":"Pantene","price":60,"quantity":3,"category":"Shampoo"}
+]
+show();
+function show()
+{
+     var arr=products.map(createmine);
+    let strData=arr.join(" ");
+    console.log(arr);
+    var table=document.getElementById("disp");
+    table.innerHTML="<div class='row'>"+strData+"</div>";
+}
+function createmine(pr)
+{let str="";
+    str="<div class='col-4 bg-warning text-center border'>"+pr.prod+"<br>"+pr.price+"<br>"
+    +pr.quantity+"<br>"+pr.category+"<br>"+"</div>"
+    
+    return str;
+}
+</script>
+</html>
